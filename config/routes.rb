@@ -7,8 +7,13 @@ Tumblful::Application.routes.draw do
     resources :follows, :except => [:new, :edit, :show, :update]
     root :to => 'follows#index', :as => :user_root
   end
-
+  # unpluralized image_links and text_posts to test (took off the 's').
+  # That broke even the homepage, so I re-pluralized them
+  resources :image_links
+  resources :text_posts
+  
   # You can have the root of your site routed with "root"
+  # should there be more here...?
   root :to => 'home#index'
 
   # Example of regular route:
