@@ -1,0 +1,16 @@
+#text_post.title is a placeholder since I haven't written anything in the model class yet
+<div>
+  <% @text_posts.each do |textpost| %>
+    <%= div_for textpost do %>
+      <%= content_tag :p, textpost.title %>
+      <p>
+        <%= link_to "Show", textpost %>
+      </p>
+    <% end %>
+  <% end %>
+  <nav>
+    <ul>
+      <li><%= link_to "Home", root_path %></li>
+    </ul>
+  </nav>
+</div>

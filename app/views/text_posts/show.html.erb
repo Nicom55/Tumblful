@@ -1,0 +1,13 @@
+<div>
+  <%= content_tag :p, @text_post.title %>
+  <%= content_tag :p, @text_post.id %>
+  <%= content_tag :p, @text_post.body%>
+  <%= content_tag :p, @text_post.created_at %>
+  <%= content_tag :p, @text_post.updated_at %>
+  <nav>
+    <ul>
+      <li><%= link_to "Home", root_path %></li>
+      <li><%= link_to "Back", text_posts_path %></li>
+    </ul>
+  </nav>
+</div>
