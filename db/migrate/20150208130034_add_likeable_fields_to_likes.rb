@@ -1,4 +1,4 @@
-class AddLikeableFieldsToLike < ActiveRecord::Migration
+class AddLikeableFieldsToLikes < ActiveRecord::Migration
   def change
     change_table :likes do |t|
       t.string :likeable_type

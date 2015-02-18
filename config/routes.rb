@@ -11,6 +11,7 @@ Tumblful::Application.routes.draw do
   # That broke even the homepage, so I re-pluralized them
   resources :image_links
   resources :text_posts
+  resources :likes, :only => [:create]
   
   # You can have the root of your site routed with "root"
   # should there be more here...?

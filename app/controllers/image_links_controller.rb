@@ -31,7 +31,7 @@ class ImageLinksController < ApplicationController
   def create
     @image_link = ImageLink.new(url: params[:image_link][:url], title: params[:image_link][:title])
     if @image_link.save
-      redirect_to :index
+      redirect_to image_links_path
     else
       @errors = @image_link.errors
       render :new
@@ -43,7 +43,7 @@ class ImageLinksController < ApplicationController
   def update
     @image_link = ImageLink.find(params[:id])
     if @image_link.update(image_link_params)
-      redirect_to :index
+      redirect_to image_links_path
     else
       @errors = @image_link.errors
       render :edit

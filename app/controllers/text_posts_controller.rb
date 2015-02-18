@@ -2,18 +2,20 @@ class TextPostsController < ApplicationController
 
   #GET
   def index
-    @text_posts = TextPost.all
+    p TextPost.all
+    @text_posts = TextPost.all || []
   end
   
   #GET
   def new
+    @text_post = TextPost.new
   end
   
   #POST
   def create
     @text_post = TextPost.new(text_post_params)
     if @text_post.save
-      redirect_to :index
+      render :index
     else
       @errors = @text_post.errors
       render :new
