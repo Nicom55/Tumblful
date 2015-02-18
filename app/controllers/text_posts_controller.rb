@@ -15,7 +15,7 @@ class TextPostsController < ApplicationController
   def create
     @text_post = TextPost.new(text_post_params)
     if @text_post.save
-      redirect_to :index
+      redirect_to action: 'index'
     else
       @errors = @text_post.errors
       render :new
