@@ -3,7 +3,7 @@ class LikesController < ApplicationController
   def create
     @resource = find_resource
     @like = Like.create(like_params)
-    redirect_to :back
+    # redirect_to :back
     
     # Respond to different request formats (like AJAX)
     respond_to do |format|

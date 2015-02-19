@@ -1,7 +1,6 @@
 <% @image_links.each do |image_link| %>
 <%= content_tag :p, image_link.title, class: "strong" %>
   <%= content_tag :p, image_link.url %>
-  <!--create route to edit from ImageLink (in controller), then in the actual view, have all edit code stup, but only have one view because you'd have the one instance variable you established in your controller. clicking would take you to the edit path. basewd on the id from the params hash from the URL, you can find the imagelink record, then when the user gets to the page, they'd click send, that would upadate the record. Need the controller, need a way to extract the imagelink id from the url, and need a view which is the editing of the actual imagelink record, and includes the ability to update and save.-->
 <% end %>
 
 
@@ -16,12 +15,14 @@
     <span class='total-likes'><%= image_link.likes.count %></span> likes
     </div>
 
+
 <%= form_for Like.new, :remote => true do |f| %>
     <%= f.hidden_field :likeable_type, :value => image_link.class %>
     <%= f.hidden_field :likeable_id, :value => image_link.id %>
     <%= f.hidden_field :user_id, :value => current_user.id %>
-    <%= f.submit "Like" %>
+  <%= f.submit "Like", :class => 'like-button' %>
     <% end %>
+
   <% end %>
 
   <% end %>
