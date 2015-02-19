@@ -3,7 +3,18 @@
     <%= div_for textpost do %>
       <%= content_tag :p, textpost.title %>
       <p>
-        Like
+        <!-- start like code-->
+        <span class='likes pull-left'>
+          <%= textpost.likes.count %> likes
+        </span>
+
+            <%= form_for Like.new do |f| %>
+        <%= f.hidden_field :likeable_type, :value => textpost.class %>
+        <%= f.hidden_field :likeable_id, :value => textpost.id %>
+               <%= f.hidden_field :user_id, :value => current_user.id %>
+               <%= f.submit "Like" %>
+              <% end %>
+        <!-- end like code -->
         <%= link_to "Show", textpost %>
       </p>
     <% end %>
