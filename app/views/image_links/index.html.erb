@@ -9,7 +9,7 @@
 
 <% @image_links.each do |image_link| %>
   <h2><%= image_link.title %></h2>
-  <%= image_tag image_link.url %>
+  <%= image_tag image_link.url, :class => 'image-link-image thumbnail' %>
 
   <span class='likes pull-left'>
   <%= image_link.likes.count %> likes
