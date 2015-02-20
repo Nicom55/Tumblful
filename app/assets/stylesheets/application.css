@@ -16,3 +16,7 @@
 .strong {
   font-weight: bold;
 }
+
+.like-button {
+  border-radius:20%;
+}
