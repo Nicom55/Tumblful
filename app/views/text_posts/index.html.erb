@@ -1,9 +1,9 @@
+<!-- removing this feature
 <div>
   <% @text_posts.each do |textpost| %>
     <%= div_for textpost do %>
       <%= content_tag :p, textpost.title %>
       <p>
-        <!-- start like code-->
         <span class='likes pull-left'>
           <%= textpost.likes.count %> likes
         </span>
@@ -14,7 +14,6 @@
                <%= f.hidden_field :user_id, :value => current_user.id %>
                <%= f.submit "Like" %>
               <% end %>
-        <!-- end like code -->
         <%= link_to "Show", textpost %>
       </p>
     <% end %>
@@ -25,4 +24,4 @@
       <li><%= link_to "New TextPost", new_text_post_path %></li>
     </ul>
   </nav>
-</div>
+</div> -->
