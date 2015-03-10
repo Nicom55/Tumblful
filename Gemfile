@@ -52,8 +52,9 @@ group :development, :test do
   gem 'rspec-rails', '~> 2.0'
   # Use Factory Girl for Active Record sample instance object creation: https://github.com/thoughtbot/factory_girl/blob/master/GETTING_STARTED.md
   gem 'factory_girl_rails'
-  # Use FFaker for random seed generation: https://github.com/EmmanuelOga/ffaker
-  gem 'ffaker'
+  # Use 
+  #for random seed generation: https://github.com/EmmanuelOga/ffaker
+  gem 'ffaker', :require => false
   # Use Shoulda Matchers for validation and association testing: https://github.com/thoughtbot/shoulda-matchers
   gem 'shoulda-matchers'
 end
